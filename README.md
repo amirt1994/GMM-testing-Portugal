@@ -116,7 +116,7 @@ Important points:
 
 ## 4. Figures and how to read them
 
-All figures are in the folder `validation/`. It has two parts:
+The validation figures are in the folder `validation/`. It has two parts (the uniform hazard spectra are in the separate folder `UHS/`, see C below):
 
 * **`validation/versus_observed_data/`** — the models compared with the observed records. This is the real validation.
   There is one folder for inland (`inland/`) and one for offshore (`offshore/`). Each has the residual histograms and the
@@ -138,6 +138,28 @@ All figures are in the folder `validation/`. It has two parts:
 | `response_spectra_inland.png`, `response_spectra_offshore.png` | Predicted response spectra (SA versus period) of the models, for Mw 5, 6 and 7 at three distances (Rjb = 10, 50 and 100 km in the inland plot). | Used to check if the shape and the level of the models are consistent, especially for large magnitudes where we have no observations. |
 | `magnitude_scaling_inland.png`, `magnitude_scaling_offshore.png` | Predicted ground motion as a function of magnitude, at fixed distance. | Check that the scaling is smooth and physically reasonable (no strange jumps or saturation). |
 
+### C. Uniform hazard spectra (`UHS/`)
+
+The folder `UHS/` has the uniform hazard spectra (UHS) of the four GMMs, obtained from probabilistic seismic hazard
+calculations for Portuguese sites. The figures are in `UHS/figures/` and the numbers are in `UHS/csv/`.
+
+| File | What it shows | How to read it |
+|---|---|---|
+| `figures/UHS_475yr.png` | UHS for the 475-year return period (10% probability of exceedance in 50 years). One panel per city (Lisbon, Porto, Faro, Sines, Lagos, Coimbra, Evora, Beja, Braga), with the spectral acceleration SA (g) versus period (s) for each GMM. PGA is plotted at the left of the period axis. | Compare the level and the shape of the spectra between the GMMs. A higher curve means a higher hazard for the same return period. |
+| `figures/UHS_2475yr.png` | The same for the 2475-year return period (2% probability of exceedance in 50 years). | Same as above, for a longer return period. |
+| `csv/uhs_all_gmms.csv` | All UHS values used in the figures, and the values for the other sites (Setubal and Braganca). | One row per city, GMM, return period and intensity measure (see the columns below). |
+
+Columns of `uhs_all_gmms.csv`:
+
+| Column | Meaning |
+|---|---|
+| `city`, `lon`, `lat` | Site name and its coordinates (degrees) |
+| `gmm` | Ground-motion model (`Kotha HighStress-Slow`, `Kotha default (region 5)`, `Xana et al. 2026`, `Taherian 2025`) |
+| `return_period` | Return period (years): 475 or 2475 |
+| `poe_50y` | Probability of exceedance in 50 years for this return period |
+| `imt`, `period_s` | Intensity measure (PGA or SA at a period) and its period in seconds (PGA is given at 0.01 s; the periods go up to 2 s) |
+| `sa_g` | Spectral acceleration of the UHS (g) |
+
 ---
 
 ## 5. Repository structure
@@ -151,12 +173,15 @@ GMM-validation-Portugal/
 │   │   ├── observed_offshore_used_in_validation.csv
 │   │   └── original_files/            (vs30-stations.csv, psa_summary_hor*.csv)
 │   └── gmm_files/                     <- Python files of the GMMs (OpenQuake format)
-└── validation/
-    ├── versus_observed_data/          <- models compared with observed records
-    │   ├── inland/                    (residual histograms + IM_vs_Rjb, by magnitude bin)
-    │   └── offshore/                  (residual histograms + IM_vs_Rjb, by magnitude bin)
-    └── comparison_all_GMMs/           <- models compared with each other
-        └── response_spectra_*.png, magnitude_scaling_*.png
+├── validation/
+│   ├── versus_observed_data/          <- models compared with observed records
+│   │   ├── inland/                    (residual histograms + IM_vs_Rjb, by magnitude bin)
+│   │   └── offshore/                  (residual histograms + IM_vs_Rjb, by magnitude bin)
+│   └── comparison_all_GMMs/           <- models compared with each other
+│       └── response_spectra_*.png, magnitude_scaling_*.png
+└── UHS/                               <- uniform hazard spectra
+    ├── figures/                       (UHS_475yr.png, UHS_2475yr.png)
+    └── csv/                           (uhs_all_gmms.csv)
 ```
 
 ---
