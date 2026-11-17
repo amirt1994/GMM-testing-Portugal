@@ -18,7 +18,7 @@ from Portuguese seismic stations, for two source regions:
 | Short name in figures | Description | File in `data/gmm_files/` |
 |---|---|---|
 | Xana et al. 2026 (inland / offshore) | Published regional model (class `Morgadoetal2026_*`). Inputs: magnitude and Rjb only. | `xana_2025_inland.py`, `xana_2025_offshore.py` |
-| Taherian 2025 (inland / offshore) | Our model, a regression on EXSIM stochastic simulations. For Mw > 6 the spectral shape is replaced by the Kotha et al. (2020) shape. Variance terms (τ, φ) from Taherian et al. (2024). Rock reference (Vs30 = 760 m/s). | `taherian_2025_inland.py`, `taherian_2025_offshore.py` |
+| Taherian 2025 (inland / offshore) | Our model, a regression on EXSIM stochastic simulations.  Variance terms (τ, φ) from Taherian et al. (2024). Rock reference (Vs30 = 760 m/s). | `taherian_2025_inland.py`, `taherian_2025_offshore.py` |
 | Kotha 2020 HighStress-Slow | Kotha et al. (2020) ESHM20 model with `sigma_mu_epsilon = 1.35563` and `c3_epsilon = 1.732051`. ESHM20 region 0 (inland) and region 5 (offshore). | `kotha_2020.py` (OpenQuake copy) |
 | Kotha 2020 (ESHM20 region 5, c3_epsilon = 0) | Kotha et al. (2020), region 5 for both inland and offshore, central value of the anelastic term. | `kotha_2020.py` (OpenQuake copy) |
 
