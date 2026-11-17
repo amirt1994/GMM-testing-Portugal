@@ -198,8 +198,7 @@ cmaker = simple_cmaker([gmm], ["PGA", "SA(0.2)"])
 * Best model inland: …
 * Best model offshore: …
 * Main bias of each model (over- or under-prediction, by period and magnitude): …
-* Limitations: small number of records for Mw > 5.2 and for Mw > 6 (only a few events); results for large
-  magnitudes depend on the simulation-based part of the Taherian model.
+* Limitations: small number of records for Mw > 5.2 and for Mw > 6 (only a few events)
 
 ---
 
