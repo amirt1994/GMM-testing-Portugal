@@ -149,6 +149,14 @@ calculations for Portuguese sites. The figures are in `UHS/figures/` and the num
 | `figures/UHS_2475yr.png` | The same for the 2475-year return period (2% probability of exceedance in 50 years). | Same as above, for a longer return period. |
 | `csv/uhs_all_gmms.csv` | All UHS values used in the figures, and the values for the other sites (Setubal and Braganca). | One row per city, GMM, return period and intensity measure (see the columns below). |
 
+**475-year uniform hazard spectra**
+
+![475-year uniform hazard spectra](UHS/figures/UHS_475yr.png)
+
+**2475-year uniform hazard spectra**
+
+![2475-year uniform hazard spectra](UHS/figures/UHS_2475yr.png)
+
 Columns of `uhs_all_gmms.csv`:
 
 | Column | Meaning |
