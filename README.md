@@ -25,7 +25,7 @@ from Portuguese seismic stations, for two source regions:
 Settings used in the validation:
 
 * Vs30 = 760 m/s (rock reference) for all models
-* Hypocentral depth = 10 km, rake = -90° (normal faulting) where the model needs them
+* Hypocentral depth = 10 km, reverse faulting
 * Kotha 2020: `vs30measured = True` inland, `False` offshore
 * Intensity measures: PGA and spectral acceleration (SA) at periods from 0.05 s to 1.0 s
 
